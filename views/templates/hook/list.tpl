@@ -28,7 +28,6 @@
 	<div id="musicsContent" data-urlaux='{$link->getAdminLink('AdminModules')}&id_product={$id_product}'>
 		<div id="musics">
 			{foreach from=$musics item=music}
-			{$music.linked_digital_id|var_dump}
 				<div id="musics_{$music.id_music}" class="panel">
 					<div class="row" style="margin-bottom: 2%;">
 						<div class="col-lg-1">
@@ -40,16 +39,6 @@
 							</audio>
 						</div>
 
-<div class="btn-group-action pull-right text-center">
-		<span style="display: block; margin-bottom: 9%;">	{l s='Virtual Product' mod='roanjamusicshop'}	:</span>
-					<select name="virtual_product_{$music.id_music}" id="virtual_product_{$music.id_music}">
-						{foreach name=outer from=$virtualproduct item=virtual}
-					  <option value="{$virtual.id_product}" {if $virtual.id_product == $music.linked_digital_id} selected="selected" {/if}>
-							{$virtual.name}
-						</option>
-						{/foreach}
-					</select>
-		</div>
 </div>
 			<div class="row text-center">
 							<div class="container-fluid" style="width: 85%;" >
