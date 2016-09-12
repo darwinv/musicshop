@@ -41,7 +41,7 @@ class RoanjaMusicShop extends Module
 	{
 		$this->name = 'roanjamusicshop';
 		$this->tab = 'front_office_features';
-		$this->version = '1.0';
+		$this->version = '1.0.1';
 		$this->author = 'Romell Jaramillo';
 		$this->need_instance = 0;
 		$this->secure_key = Tools::encrypt($this->name);
@@ -292,9 +292,9 @@ class RoanjaMusicShop extends Module
 
 	public function hookDisplayHeader()
 	{
-			$this->context->controller->addCSS($this->_path.'css/mp3-player-button.css', 'all');
-			$this->context->controller->addCSS($this->_path.'css/mp3-bar-ui.css', 'all');
-			$this->context->controller->addCSS($this->_path.'css/mp3-player-ui.css', 'all');
+			$this->context->controller->addCSS($this->_path.'views/css/mp3-player-button.css', 'all');
+			$this->context->controller->addCSS($this->_path.'views/css/mp3-bar-ui.css', 'all');
+			$this->context->controller->addCSS($this->_path.'views/css/mp3-player-ui.css', 'all');
 		  	$this->context->controller->addJS($this->_path.'js/soundmanager2.js');
         	$this->context->controller->addJS($this->_path.'js/mp3-bar-ui.js');
             $this->context->controller->addJS($this->_path.'js/funciones.js');
@@ -369,7 +369,7 @@ class RoanjaMusicShop extends Module
 
 	public function hookdisplayRightColumnProduct()
 	{
-		$this->context->controller->addCSS($this->_path.'css/mp3-productDetail.css', 'all');
+		$this->context->controller->addCSS($this->_path.'views/css/mp3-productDetail.css', 'all');
 			$associated_mp3 = $this->GetSoundsOfProductList(null,null,'LIMIT 1');
 			if(!empty($associated_mp3)){
  				$this->context->smarty->assign(array(
