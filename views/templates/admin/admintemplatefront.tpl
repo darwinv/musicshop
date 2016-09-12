@@ -45,40 +45,40 @@
                 </p>
             </div>
           </div>
-          <div class="form-group">				
+          <div class="form-group">
             <label class="control-label col-lg-2" for="author_{$default_language}">
-                {l s='Author'  mod='roanjamusicshop'}					
+                {l s='Author'  mod='roanjamusicshop'}
             </label>
             <div class="col-lg-9">
                 {include file="controllers/products/input_text_lang.tpl"
-                    languages=$languages                    
+                    languages=$languages
                     input_name='author'
                     input_value=''}
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-lg-2" for="mp3_title_{$default_language}">
-              {l s='Title'  mod='roanjamusicshop'}          
+              {l s='Title'  mod='roanjamusicshop'}
             </label>
             <div class="col-lg-9">
               {include file="controllers/products/input_text_lang.tpl"
-                languages=$languages                
+                languages=$languages
                 input_name='mp3_title'
                 input_value=''}
             </div>
-          </div>  
-          <div class="form-group">        
-            <label class="control-label col-lg-2" for="genero_{$default_language}">         
-                {l s='Genero'  mod='roanjamusicshop'}        
+          </div>
+          <div class="form-group">
+            <label class="control-label col-lg-2" for="genero_{$default_language}">
+                {l s='Genero'  mod='roanjamusicshop'}
             </label>
             <div class="col-lg-9">
               {include file="controllers/products/input_text_lang.tpl"
-                languages=$languages                
+                languages=$languages
                 input_name='genero'
                 input_value=''}
             </div>
-          </div>  
-          <div class="form-group">        
+          </div>
+          <div class="form-group">
             <label class="control-label col-lg-2">
               {l s='Enabled'}
             </label>
@@ -95,7 +95,7 @@
                 <a class="slide-button btn"></a>
               </span>
             </div>
-          </div>  
+          </div>
           <div class="form-group">
                 <label class="control-label col-lg-3 required">
                  {l s='Upload your MP3/WAV/OGG here' mod='roanjamusicshop'}
@@ -119,38 +119,38 @@
                       	$('#mp3_name-selectbutton').click(function(e) {
                       		$('#mp3_name').trigger('click');
                       	});
-                      
+
                       	$('#mp3_name-name').click(function(e) {
                       		$('#mp3_name').trigger('click');
                       	});
-                      
+
                       	$('#mp3_name-name').on('dragenter', function(e) {
                       		e.stopPropagation();
                       		e.preventDefault();
                       	});
-                      
+
                       	$('#mp3_name-name').on('dragover', function(e) {
                       		e.stopPropagation();
                       		e.preventDefault();
                       	});
-                      
+
                       	$('#mp3_name-name').on('drop', function(e) {
                       		e.preventDefault();
                       		var files = e.originalEvent.dataTransfer.files;
                       		$('#mp3_name')[0].files = files;
                       		$(this).val(files[0].name);
                       	});
-                      
+
                       	$('#mp3_name').change(function(e) {
                       		if ($(this)[0].files !== undefined)
                       		{
                       			var files = $(this)[0].files;
                       			var name  = '';
-                      
+
                       			$.each(files, function(index, value) {
                       				name += value.name+', ';
                       			});
-                      
+
                       			$('#mp3_name-name').val(name.slice(0, -2));
                       		}
                       		else // Internet Explorer 9 Compatibility
@@ -159,7 +159,7 @@
                       			$('#mp3_name-name').val(name[name.length-1]);
                       		}
                       	});
-                      
+
                       	if (typeof mp3_name_max_files !== 'undefined')
                       	{
                       		$('#mp3_name').closest('form').on('submit', function(e) {
@@ -173,14 +173,14 @@
                    </script>
                    <p class="help-block">
                    	{l s='Maximum MP3 size is :' mod='roanjamusicshop'} {$max_mp3_size}{l s='. - PLEASE NOTE THAT SOME BROWSERS DO NOT SUPPORT MP4/AAC, OGG, WAV MUSIC FORMATS' mod='roanjamusicshop'}
-                     
+
                    </p>
                 </div>
-          </div>         
+          </div>
       </div>
       <!-- /.form-wrapper -->
       <div class="panel-footer">
-        <a href="{$link->getAdminLink('AdminProducts')}" class="btn btn-default"><i class="process-icon-cancel"></i> {l s='Cancel'|escape:'html' mod='prestamusicshop'}</a>
+        <a href="{$link->getAdminLink('AdminProducts')}" class="btn btn-default"><i class="process-icon-cancel"></i> {l s='Cancel'|escape:'html' mod='roanjamusicshop'}</a>
         <input type="hidden" name="submitMusic" id="submitMusic" value="1"/>
         <input type="hidden" name="id_product" id="productId" value="{$id_product|escape:'html'}"/>
         <input type="hidden" name="deleteroanjamusicshop" id="deleteroanjamusicshop" value=""/>
@@ -210,6 +210,6 @@
   		}else{
   			e.preventDefault();
   		}
-  	}) 
-  })  
+  	})
+  })
 </script>
