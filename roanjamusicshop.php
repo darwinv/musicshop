@@ -295,9 +295,9 @@ class RoanjaMusicShop extends Module
 			$this->context->controller->addCSS($this->_path.'views/css/mp3-player-button.css', 'all');
 			$this->context->controller->addCSS($this->_path.'views/css/mp3-bar-ui.css', 'all');
 			$this->context->controller->addCSS($this->_path.'views/css/mp3-player-ui.css', 'all');
-		  	$this->context->controller->addJS($this->_path.'js/soundmanager2.js');
-        	$this->context->controller->addJS($this->_path.'js/mp3-bar-ui.js');
-            $this->context->controller->addJS($this->_path.'js/funciones.js');
+		  	$this->context->controller->addJS($this->_path.'views/js/soundmanager2.js');
+        	$this->context->controller->addJS($this->_path.'views/js/mp3-bar-ui.js');
+            $this->context->controller->addJS($this->_path.'views/js/funciones.js');
 	}
 
 	public function hookDisplayFooter()
