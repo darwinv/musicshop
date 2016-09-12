@@ -1,0 +1,184 @@
+/*
+
+ SoundManager 2: Basic MP3 player CSS
+ ------------------------------------
+
+ Clicks on links to MP3s are intercepted via JS, calls are
+ made to SoundManager to load/play sounds. CSS classes are
+ appended to the link, which are used to highlight the
+ current play state and so on.
+
+ Class names are applied in addition to "sm2_button" base.
+
+ Default:
+
+ sm2_button
+
+ Additional states:
+
+ sm2_playing
+ sm2_paused
+
+ eg.
+
+ <!-- default -->
+ <a href="some.mp3" class="sm2_button">some.mp3</a>
+
+ <!-- playing -->
+ <a href="some.mp3" class="sm2_button sm2_playing">some.mp3</a>
+
+
+ Note you don't require ul.graphic / ul.flat etc. for your use
+ if only using one style on a page. You can just use .sm2_button{}
+ and so on, but isolate the CSS you want.
+
+ Side note: Would do multiple class definitions eg.
+
+ a.sm2_default.sm2_playing{}
+
+ .. except IE 6 has a parsing bug which may break behaviour,
+ applying sm2_playing {} even when the class is set to sm2_default.
+
+
+ If you want to make your own UI from scratch, here is the base:
+
+ Default + hover state, "click to play":
+
+ a.sm2_button {}
+ a.sm2_button:hover {}
+
+ Playing + hover state, "click to pause":
+
+ a.sm2_playing {}
+ a.sm2_playing:hover {}
+
+ Paused + hover state, "click to resume":
+
+ a.sm2_paused {}
+ a.sm2_paused:hover {}
+
+*/
+a .btn-tooltip {
+	cursor: pointer;
+}
+
+.btn-bar-rjm.text-center.container a {
+	display: inline-block;
+	min-width: 50px;
+    margin-left: -4px;
+}
+/*button.agregar-lista{
+	background-image:url(../image/list_add-128.png);
+	width:18px;
+	height:18px;
+}*/
+/*img.youtube-btn{
+	background-image:url(../image/youtube.png);
+	width:18px;
+	height:18px;
+}*/
+/*button.quitar-lista{
+		background-image:url(../image/BT_line_remove-128.png);
+        width:18px;
+        height:18px;
+}*/
+i.quitar-lista2{
+    cursor:pointer;
+}
+div.btn-bar-rjm {
+    width: 100%;
+    height: 30px;
+}
+div.btn-rjm {
+		width: 20%;
+		float: left;
+		height: 1.9em;
+		padding: 4px;
+		cursor: pointer;
+		text-align: center;
+		background-color: #eeeeee;
+}
+div.btn-rjm-special {
+    width: 40%;
+    float: left;
+    height: 100%;
+    padding: 7px;
+    cursor: pointer;
+    text-align: center;
+    background-color: #eeeeee;
+}
+
+div.rj-music + h5.name{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.roanjayt .btn-rjm {
+    background-color: red;
+    color: white;
+    border-right: solid 1px red;
+
+}
+.roanjayt .btn-rjm-special {
+    background-color: red;
+    color: white;
+    border-right: solid 1px red;
+
+}
+div.btn-rjm:hover {
+    background-color: #ccc;
+    color: black;
+}
+
+div.btn-rjm-special:hover {
+    background-color: #ccc;
+    color: black;
+}
+
+.roanjayt .btn-rjm:hover {
+    background-color: red;
+}
+
+.roanjayt .btn-rjm-special:hover {
+    background-color: red;
+}
+#pricerjm {
+		background-color: #28343d;
+		color: white;
+		font-weight: bold;
+		cursor: text;
+}
+#pricerjm-special {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    width: 23%;
+    cursor: text;
+}
+.sm2_button .btn-rjm {
+  border-right: #E8E8E8 solid 1px;
+}
+.sm2_button .btn-rjm-special {
+    border-right: #ccc solid 1px;
+}
+.product-block .Buttons {
+    margin-top: 80px;
+}
+.product-block .product-image-container.image .name {
+    min-height: 55px;
+}
+a.agregar-lista div {
+    height: 1.9em;
+    background-image: url(../image/list2.png);
+    background-size: 36%;
+    background-repeat: no-repeat;
+    background-position: 50% 53%;
+}
+a.quitar-lista div {
+    height: 1.9em;
+    background-image: url(../image/list3.png);
+    background-size: 36%;
+    background-repeat: no-repeat;
+    background-position: 50% 53%;
+}
