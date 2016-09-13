@@ -68,8 +68,8 @@
 					</div>
 	<div class="row">
 				<div class="btn-group-action pull-right" style="padding-top: 3%;">
-					
-							{$music.status}
+					<a class="btn {$music.status.clase}" href="{$music.status.link}" title="{$music.status.title}"><i class="{$music.status.icon}"></i> {$music.status.title}</a>
+
 							{*<button type="submit" name="deleteroanjamusicshop" class="btn btn-danger"><i class="icon-trash"></i> {l s='Delete' mod='roanjamusicshop'}</button>*}
 							<a class="btn btn-default"
 								href="{$link->getAdminLink('AdminModules')}&id_product={$id_product}&configure=roanjamusicshop&deleteroanjamusicshop={$music.id_music}">

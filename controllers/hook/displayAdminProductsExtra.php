@@ -23,6 +23,7 @@ $action_url = $this->context->link->getAdminLink('AdminRoanjaMusicShop', true);
 
     foreach ($musics as $key => $music)
     {
+			
       $musics[$key]['status'] = RoanjaMusicShop::displayStatus($music['id_music'], $music['active']);
       $associated_shop_ids = RoanjaMusic::getAssociatedIdsShop((int)$music['id_music']);
       if ($associated_shop_ids && count($associated_shop_ids) > 1)

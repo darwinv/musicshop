@@ -1119,10 +1119,7 @@ $resultados['clase']=$class;
 $resultados['title']=$title;
 $resultados['link']=$this->context->link->getAdminLink('AdminModules').'&configure='.$nombre.'&id_product='.(int)Tools::getValue('id_product').'&changeStatus&id_mp3='.(int)$id_mp3;
 
-
-		$html = '<a class="btn '.$class.'" href="'.$this->context->link->getAdminLink('AdminModules').
-		'&configure='.$nombre.'&id_product='.(int)Tools::getValue('id_product').'&changeStatus&id_mp3='.(int)$id_mp3.'" title="'.$title.'"><i class="'.$icon.'"></i> '.$title.'</a>';
-		return $html;
+		return $resultados;
 
 
 	}
