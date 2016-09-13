@@ -68,6 +68,7 @@
 					</div>
 	<div class="row">
 				<div class="btn-group-action pull-right" style="padding-top: 3%;">
+					
 							{$music.status}
 							{*<button type="submit" name="deleteroanjamusicshop" class="btn btn-danger"><i class="icon-trash"></i> {l s='Delete' mod='roanjamusicshop'}</button>*}
 							<a class="btn btn-default"

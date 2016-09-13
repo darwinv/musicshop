@@ -41,7 +41,7 @@ class RoanjaMusicShop extends Module
 	{
 		$this->name = 'roanjamusicshop';
 		$this->tab = 'front_office_features';
-		$this->version = '1.0.1';
+		$this->version = '1.0';
 		$this->author = 'Romell Jaramillo';
 		$this->need_instance = 0;
 		$this->secure_key = Tools::encrypt($this->name);
@@ -1114,9 +1114,17 @@ $nombre='roanjamusicshop';
 $title = ((int)$active == 0 ? $this->module->l('Disabled', 'displayAdminProductsExtra') : $this->module->l('Enabled', 'displayAdminProductsExtra'));
 		$icon = ((int)$active == 0 ? 'icon-remove' : 'icon-check');
 		$class = ((int)$active == 0 ? 'btn-danger' : 'btn-success');
+$resultados['icon']=$icon;
+$resultados['clase']=$class;
+$resultados['title']=$title;
+$resultados['link']=$this->context->link->getAdminLink('AdminModules').'&configure='.$nombre.'&id_product='.(int)Tools::getValue('id_product').'&changeStatus&id_mp3='.(int)$id_mp3;
+
+
 		$html = '<a class="btn '.$class.'" href="'.$this->context->link->getAdminLink('AdminModules').
 		'&configure='.$nombre.'&id_product='.(int)Tools::getValue('id_product').'&changeStatus&id_mp3='.(int)$id_mp3.'" title="'.$title.'"><i class="'.$icon.'"></i> '.$title.'</a>';
 		return $html;
+
+
 	}
 
 	public function musicExists($id_mp3)
@@ -1128,12 +1136,6 @@ $title = ((int)$active == 0 ? $this->module->l('Disabled', 'displayAdminProducts
 		return ($row);
 	}
 
-	protected function getMultiLanguageInfoMsg()
-	{
-		return '<p class="alert alert-warning">'.
-					$this->l('Since multiple languages are activated on your shop, please mind to upload your image for each one of them').
-				'</p>';
-	}
 
 	protected function getWarningMultishopHtml()
 	{
@@ -1145,20 +1147,7 @@ $title = ((int)$active == 0 ? $this->module->l('Disabled', 'displayAdminProducts
 			return '';
 	}
 
-	protected function getShopContextError($shop_contextualized_name, $mode)
-	{
-		if (is_array($shop_contextualized_name))
-			$shop_contextualized_name = implode('<br/>', $shop_contextualized_name);
 
-		if ($mode == 'edit')
-			return '<p class="alert alert-danger">'.
-							sprintf($this->l('You can only edit this Music from the shop(s) context: %s'), $shop_contextualized_name).
-					'</p>';
-		else
-			return '<p class="alert alert-danger">'.
-							sprintf($this->l('You cannot add Musics from a "All Shops" or a "Group Shop" context')).
-					'</p>';
-	}
 
 	protected function getCurrentShopInfoMsg()
 	{
@@ -1181,19 +1170,7 @@ $title = ((int)$active == 0 ? $this->module->l('Disabled', 'displayAdminProducts
 			return '';
 	}
 
-	protected function getShopAssociationError($id_mp3)
-	{
-		return '<p class="alert alert-danger">'.
-						sprintf($this->l('Unable to get slide shop association information (id_mp3: %d)'), (int)$id_mp3).
-				'</p>';
-	}
 
-	protected function getSharedMusicWarning()
-	{
-		return '<p class="alert alert-warning">'.
-					$this->l('This Music is shared with other shops! All shops associated to this music will apply modifications made here').
-				'</p>';
-	}
 }
 
 ?>
