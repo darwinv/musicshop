@@ -34,6 +34,26 @@ document.location.href = "index.php?controller=" + controladorValor + "&token="+
 
 });
 
+var $myMP3 = $("#musics");
+$myMP3.sortable({
+	opacity: 0.6,
+	cursor: "move",
+	update: function() {
+	var order = $(this).sortable("serialize") + "&action=updateMusicPosition";
+	$.ajax({
+					 data: order,
+					 type: 'POST',
+					 url: '../../ajax_roanjamusicshop'
+			 });
+	}
+});
+$myMP3.hover(function() {
+	$(this).css("cursor","move");
+},
+function() {
+	$(this).css("cursor","auto");
+});
+
 
 
 });

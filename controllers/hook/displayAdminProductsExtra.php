@@ -23,7 +23,7 @@ $action_url = $this->context->link->getAdminLink('AdminRoanjaMusicShop', true);
 
     foreach ($musics as $key => $music)
     {
-			
+
       $musics[$key]['status'] = RoanjaMusicShop::displayStatus($music['id_music'], $music['active']);
       $associated_shop_ids = RoanjaMusic::getAssociatedIdsShop((int)$music['id_music']);
       if ($associated_shop_ids && count($associated_shop_ids) > 1)
@@ -31,7 +31,9 @@ $action_url = $this->context->link->getAdminLink('AdminRoanjaMusicShop', true);
       else
         $musics[$key]['is_shared'] = false;
     }
-
+$ui_path = Media::getJqueryUIPath('ui.sortable', 'base',true);
+$urlScipt = array_pop($ui_path['js']);
+$this->context->smarty->assign('path',$urlScipt);
 		$this->context->smarty->assign('virtualproduct',$virtual_products);
 		$this->context->smarty->assign('action_url', $action_url);
 		$this->context->smarty->assign('ajax_action_url', $ajax_action_url);

@@ -90,4 +90,6 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript" src="{$path}" >  </script>
 <script type="text/javascript" src="{$pc_base_dir}views/js/update-music-songs.js"></script>

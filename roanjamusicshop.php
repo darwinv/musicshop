@@ -819,10 +819,7 @@ elseif(Tools::isSubmit('actualizarcancion')){
 			return;
 
 		$htmlScript='';
-		$ui_path = Media::getJqueryUIPath('ui.sortable', 'base',true);
-		$urlScipt = array_pop($ui_path['js']);
-		$htmlScript .= '<script type="text/javascript" src="'.$urlScipt.'"></script>';
-		$htmlScript.= '<script type="text/javascript">
+		/*$htmlScript.= '<script type="text/javascript">
 		$(function() {
 			var $myMP3 = $("#musics");
 			$myMP3.sortable({
@@ -840,7 +837,7 @@ elseif(Tools::isSubmit('actualizarcancion')){
 				$(this).css("cursor","auto");
 			});
 		});
-		</script>';
+		</script>';*/
 
 		return $htmlScript;
 	}
