@@ -1,5 +1,5 @@
-{*
-* 2007-2015 PrestaShop
+/*
+* 2007-2016 PrestaShop
 *
 * NOTICE OF LICENSE
 *
@@ -18,10 +18,11 @@
 * needs please refer to http://www.prestashop.com for more information.
 *
 *  @author PrestaShop SA <contact@prestashop.com>
-*  @copyright  2007-2015 PrestaShop SA
+*  @copyright  2007-2016 PrestaShop SA
+*  @version  Release: $Revision$
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
-*}
+*/
 <div class="panel"><h3><i class="icon-list-ul"></i> {l s='Music list' mod='roanjamusicshop'}
 	<span class="panel-heading-action">
 		<a id="desc-product-new" class="list-toolbar-btn" href="{$link->getAdminLink('AdminProducts')}&configure=roanjamusicshop&addMusic=1">
@@ -40,9 +41,9 @@
 							<span><i class="icon-arrows "></i></span>
 						</div>
 						<div class="col-md-3">
-							<audio controls>							  
-							  <source src="{$music_baseurl}{$music.mp3_name}" type="audio/mpeg">							
-							</audio>							
+							<audio controls>
+							  <source src="{$music_baseurl}{$music.mp3_name}" type="audio/mpeg">
+							</audio>
 						</div>
 						<div class="col-md-8">
 							<h4 class="pull-left">
@@ -59,7 +60,7 @@
 								{$music.status}
 
 								<a class="btn btn-default"
-									href="{$link->getAdminLink('AdminProducts')}&configure=roanjamusicshop&id_music={$music.id_music}">									
+									href="{$link->getAdminLink('AdminProducts')}&configure=roanjamusicshop&id_music={$music.id_music}">
 									<i class="icon-edit"></i>
 									{l s='Edit' mod='roanjamusicshop'}
 								</a>

@@ -1,5 +1,5 @@
-{*
-* 2007-2014 PrestaShop
+/*
+* 2007-2016 PrestaShop
 *
 * NOTICE OF LICENSE
 *
@@ -18,10 +18,11 @@
 * needs please refer to http://www.prestashop.com for more information.
 *
 *  @author PrestaShop SA <contact@prestashop.com>
-*  @copyright  2007-2014 PrestaShop SA
+*  @copyright  2007-2016 PrestaShop SA
+*  @version  Release: $Revision$
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
-*}
+*/
 
 <h1>Product_list.tpl</h1>
 <div class="music-container">
@@ -29,7 +30,7 @@
 {foreach from=$associated_mp3 item=items}
     <p class="music_shop_item">
         <a data-href="{$modules_dir}prestamusicshop/mp3/{$items.mp3_name}" title="{$items.author}-{$items.mp3_title}" class="sm2_button">{$items.author}-{$items.mp3_title}</a>
-        <span class="music_title">{$assoc_increment}. {$items.author|truncate:10}-{$items.mp3_title|truncate:10}</span>    
+        <span class="music_title">{$assoc_increment}. {$items.author|truncate:10}-{$items.mp3_title|truncate:10}</span>
     </p>
 {$assoc_increment = $assoc_increment + 1}
 {/foreach}

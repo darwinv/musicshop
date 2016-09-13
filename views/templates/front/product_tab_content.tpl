@@ -1,5 +1,5 @@
-{*
-* 2007-2014 PrestaShop
+/*
+* 2007-2016 PrestaShop
 *
 * NOTICE OF LICENSE
 *
@@ -18,10 +18,11 @@
 * needs please refer to http://www.prestashop.com for more information.
 *
 *  @author PrestaShop SA <contact@prestashop.com>
-*  @copyright  2007-2014 PrestaShop SA
+*  @copyright  2007-2016 PrestaShop SA
+*  @version  Release: $Revision$
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
-*}
+*/
 {*if !isset($priceDisplayPrecision)}
     {assign var='priceDisplayPrecision' value=2}
 {/if}
@@ -61,7 +62,7 @@
         <div class="sm2-row">
 
           <div class="sm2-inline-element buk-track-plus">
-            <span class="buk-track-counter">{counter}</span>  
+            <span class="buk-track-counter">{counter}</span>
 
             <span class="sm2-col buk-track-command">
 
@@ -95,7 +96,7 @@
               <b>{$items.genero}</b>
             </div>
             <div href="{$link->getPageLink('cart',false, NULL, "add=1&amp;id_product={$items.linked_digital_id|intval}&amp;token={$static_token}", false)|escape:'html':'UTF-8'}" rel="nofollow" title="{l s='Add to cart'}" data-id-product="{$items.linked_digital_id|intval}" class="sm2-inline-element buk-track-cash btn-rjm-list ajax_add_to_cart_button">
-                <span class="assoc_price"> 
+                <span class="assoc_price">
                   {convertPrice price=$items.price}
             &nbsp;&nbsp;<i class="fa fa-shopping-cart"></i></span>
             </div>
