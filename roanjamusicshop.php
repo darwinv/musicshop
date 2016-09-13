@@ -39,8 +39,8 @@ class RoanjaMusicShop extends Module
 	{
 		$this->name = 'roanjamusicshop';
 		$this->tab = 'front_office_features';
-		$this->version = '1.0';
-		$this->author = 'Romell Jaramillo';
+		$this->version = '1.0.0';
+		$this->author = 'Roanja';
 		$this->need_instance = 0;
 		$this->secure_key = Tools::encrypt($this->name);
 		$this->bootstrap = true;
@@ -446,6 +446,7 @@ class RoanjaMusicShop extends Module
 		$this->context = Context::getContext();
 		$id_shop = $this->context->shop->id;
 		$id_lang = $this->context->language->id;
+		$arrdata = array();
 
 				$id_sql='SELECT a.* from `' . _DB_PREFIX_ . 'rj_music_lang` as a,`' . _DB_PREFIX_ . 'rj_music_shop` as b where linked_digital_id=' . (int)$id_product
 				. ' or (linked_digital_id!="" and id_product=' . (int)$id_product . ') AND id_lang=' . (int)$id_lang
@@ -1106,6 +1107,7 @@ $product = new Product((int)Tools::getValue('id_product'));
 
 	public function displayStatus($id_mp3, $active)
 	{
+$resultados = array();		
 $nombre='roanjamusicshop';
 $title = ((int)$active == 0 ? $this->module->l('Disabled', 'displayAdminProductsExtra') : $this->module->l('Enabled', 'displayAdminProductsExtra'));
 		$icon = ((int)$active == 0 ? 'icon-remove' : 'icon-check');

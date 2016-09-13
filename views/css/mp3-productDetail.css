@@ -128,7 +128,7 @@
 .sm2-bar-musicshop.textured.dark-text .sm2-playlist-wrapper ul li:hover a,
 .sm2-bar-musicshop.textured.dark-text .sm2-playlist-wrapper ul li.selected a {
     background-color: rgba(0, 0, 0, 0.1);
-    background-image: url(../image/black-10.png);
+    background-image: url(../img/black-10.png);
     background-image: none, none
 }
 
@@ -258,7 +258,7 @@
 
 .content-tab-musicshop .list-music-shop .bucket-track-header-meta,
 .content-tab-musicshop .list-music-shop .buk-track-meta-parent {
-    margin-left: 150px;    
+    margin-left: 150px;
     padding: 5px;
 }
 

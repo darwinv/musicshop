@@ -68,17 +68,17 @@ a .btn-tooltip {
     margin-left: -4px;
 }
 /*button.agregar-lista{
-	background-image:url(../image/list_add-128.png);
+	background-image:url(../img/list_add-128.png);
 	width:18px;
 	height:18px;
 }*/
 /*img.youtube-btn{
-	background-image:url(../image/youtube.png);
+	background-image:url(../img/youtube.png);
 	width:18px;
 	height:18px;
 }*/
 /*button.quitar-lista{
-		background-image:url(../image/BT_line_remove-128.png);
+		background-image:url(../img/BT_line_remove-128.png);
         width:18px;
         height:18px;
 }*/
@@ -177,7 +177,7 @@ a.agregar-lista div {
 }
 a.quitar-lista div {
     height: 1.9em;
-    background-image: url(../image/list3.png);
+    background-image: url(../img/list3.png);
     background-size: 36%;
     background-repeat: no-repeat;
     background-position: 50% 53%;
