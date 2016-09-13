@@ -1,4 +1,5 @@
-/*
+<?php
+/**
 * 2007-2016 PrestaShop
 *
 * NOTICE OF LICENSE
@@ -23,8 +24,6 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 */
-<?php
-
 class RoanjaMusicShopDisplayAdminProductsExtraController
 {
 	public function __construct($module, $file, $path)
