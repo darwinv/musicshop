@@ -585,7 +585,7 @@ class RoanjaMusicShop extends Module
 		/* Display errors if needed */
 		if (count($errors))
 		{
-			$this->_html .= $this->displayError(implode('<br />', $errors));
+			
 
 			return false;
 		}
@@ -705,7 +705,7 @@ elseif(Tools::isSubmit('actualizarcancion')){
 
 		/* Display errors if needed */
 		if (count($errors))
-			$this->_html .= $this->displayError(implode('<br />', $errors));
+			
 		elseif (Tools::isSubmit('submitMusic') && Tools::getValue('id_mp3'))
 			Tools::redirectAdmin($this->context->link->getAdminLink('AdminProducts').'&id_product='.(int)Tools::getValue('id_product').'&updateproduct&conf=4&key_tab=Module'.$this->name.$this->token);
 		elseif (Tools::isSubmit('submitMusic'))
@@ -792,7 +792,7 @@ elseif(Tools::isSubmit('actualizarcancion')){
 
 
 		if (count($errors))
-			$this->_html .= $this->displayError(implode('<br />', $errors));
+		
 		elseif (Tools::isSubmit('submitMusic') && Tools::getValue('id_mp3')){
 			// var_dump("dentro de hookActionProductUpdate del modulo");
 			// die();
@@ -966,7 +966,6 @@ $product = new Product((int)Tools::getValue('id_product'));
 		$fields_form['form']['input'][] = array('type' => 'hidden', 'name' => 'productId', 'value' =>(int)Tools::getValue('id_product'));
 		$fields_form['form']['input'][] = array('type' => 'hidden', 'name' => 'categoryBox[]');
 		$fields_form['form']['input'][] = array('type' => 'hidden', 'name' => 'id_category_default');
-		//<input type="hidden" name="submitted_tabs[]" value="belvg_samplemodule" />
 		$helper = new HelperForm();
 		$helper->show_toolbar = false;
 		$helper->table = $this->table;
@@ -1132,38 +1131,8 @@ $resultados['link']=$this->context->link->getAdminLink('AdminModules').'&configu
 	}
 
 
-	protected function getWarningMultishopHtml()
-	{
-		if (Shop::getContext() == Shop::CONTEXT_GROUP || Shop::getContext() == Shop::CONTEXT_ALL)
-			return '<p class="alert alert-warning">'.
-						$this->l('You cannot manage Musics items from a "All Shops" or a "Group Shop" context, select directly the shop you want to edit').
-					'</p>';
-		else
-			return '';
-	}
 
-
-
-	protected function getCurrentShopInfoMsg()
-	{
-		$shop_info = null;
-
-		if (Shop::isFeatureActive())
-		{
-			if (Shop::getContext() == Shop::CONTEXT_SHOP)
-				$shop_info = sprintf($this->l('The modifications will be applied to shop: %s'), $this->context->shop->name);
-			else if (Shop::getContext() == Shop::CONTEXT_GROUP)
-				$shop_info = sprintf($this->l('The modifications will be applied to this group: %s'), Shop::getContextShopGroup()->name);
-			else
-				$shop_info = $this->l('The modifications will be applied to all shops and shop groups');
-
-			return '<div class="alert alert-info">'.
-						$shop_info.
-					'</div>';
-		}
-		else
-			return '';
-	}
+	
 
 
 }
