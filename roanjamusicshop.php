@@ -44,7 +44,7 @@ class RoanjaMusicShop extends Module
 		$this->need_instance = 0;
 		$this->secure_key = Tools::encrypt($this->name);
 		$this->bootstrap = true;
-		$this->module_key = 'ec76c4def7bc75537816ba32ca182df0';
+		$this->module_key = 'f66190c73a800f83c4e9715d92529c77';
 
 		parent::__construct();
 
