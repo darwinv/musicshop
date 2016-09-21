@@ -585,7 +585,7 @@ class RoanjaMusicShop extends Module
 		/* Display errors if needed */
 		if (count($errors))
 		{
-			
+
 
 			return false;
 		}
@@ -704,12 +704,13 @@ elseif(Tools::isSubmit('actualizarcancion')){
 }
 
 		/* Display errors if needed */
-		if (count($errors))
-			
-		elseif (Tools::isSubmit('submitMusic') && Tools::getValue('id_mp3'))
+		if (count($errors)):
+			$variableprueba=1;
+		elseif (Tools::isSubmit('submitMusic') && Tools::getValue('id_mp3')):
 			Tools::redirectAdmin($this->context->link->getAdminLink('AdminProducts').'&id_product='.(int)Tools::getValue('id_product').'&updateproduct&conf=4&key_tab=Module'.$this->name.$this->token);
-		elseif (Tools::isSubmit('submitMusic'))
+		elseif (Tools::isSubmit('submitMusic')):
 			Tools::redirectAdmin($this->context->link->getAdminLink('AdminProducts').'&id_product='.(int)Tools::getValue('id_product').'&updateproduct&conf=3&key_tab=ModuleRoanjamusicshop'.$this->token);
+			endif;
 	}
 
 	public function getHookController($hook_name)
@@ -791,8 +792,8 @@ elseif(Tools::isSubmit('actualizarcancion')){
 		}
 
 
-		if (count($errors))
-		
+		if (count($errors)){
+}
 		elseif (Tools::isSubmit('submitMusic') && Tools::getValue('id_mp3')){
 			// var_dump("dentro de hookActionProductUpdate del modulo");
 			// die();
@@ -803,6 +804,7 @@ elseif(Tools::isSubmit('actualizarcancion')){
 			// die();
 			Tools::redirectAdmin($this->context->link->getAdminLink('AdminProducts').'&id_product='.(int)Tools::getValue('id_product').'&updateproduct&conf=3&key_tab=ModuleRoanjamusicshop'.$this->token);
 			}
+
 	}
 
 
@@ -1106,7 +1108,7 @@ $product = new Product((int)Tools::getValue('id_product'));
 
 	public function displayStatus($id_mp3, $active)
 	{
-$resultados = array();		
+$resultados = array();
 $nombre='roanjamusicshop';
 $title = ((int)$active == 0 ? $this->module->l('Disabled', 'displayAdminProductsExtra') : $this->module->l('Enabled', 'displayAdminProductsExtra'));
 		$icon = ((int)$active == 0 ? 'icon-remove' : 'icon-check');
@@ -1132,7 +1134,7 @@ $resultados['link']=$this->context->link->getAdminLink('AdminModules').'&configu
 
 
 
-	
+
 
 
 }
