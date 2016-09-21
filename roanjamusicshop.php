@@ -214,7 +214,7 @@ class RoanjaMusicShop extends Module
 		}
 		else // Default viewport
 		{
-			$this->_html .= $this->getWarningMultishopHtml().$this->getCurrentShopInfoMsg().$this->renderForm();
+			$this->_html .= $this->renderForm();
 		}
 
 		return $this->_html;

@@ -84,7 +84,7 @@ if(Tools::getValue('action')=='getSongs'){
         $res[$i]['cover']=$home_music->GetImageList($productLinkReview[1],$productImg["id_image"]);
         $i++;
     }
-    echo json_encode($res);
+    echo Tools::jsonEncode($res);
 }
 if(Tools::getValue('action')=='setCookie'){
     if(!isset($_COOKIE['lista'])){
