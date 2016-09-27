@@ -73,8 +73,7 @@
               <b>{$items.genero}</b>
             </div>
             <div href="{$link->getPageLink('cart',false, NULL, "add=1&amp;id_product={$items.linked_digital_id|intval}&amp;token={$static_token}", false)|escape:'html':'UTF-8'}" rel="nofollow" title="{l s='Add to cart' mod='roanjamusicshop'}" data-id-product="{$items.linked_digital_id|intval}" class="sm2-inline-element buk-track-cash btn-rjm-list ajax_add_to_cart_button">
-                <span class="assoc_price">
-                  {convertPrice price=$items.price}
+                <span class="assoc_price"> {convertPrice price=$items.price}
             &nbsp;&nbsp;<i class="fa fa-shopping-cart"></i></span>
             </div>
           </div>

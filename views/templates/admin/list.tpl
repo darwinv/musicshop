@@ -25,7 +25,7 @@
 */
 <div class="panel"><h3><i class="icon-list-ul"></i> {l s='Music list' mod='roanjamusicshop'}
 	<span class="panel-heading-action">
-		<a id="desc-product-new" class="list-toolbar-btn" href="{$link->getAdminLink('AdminProducts')}&configure=roanjamusicshop&addMusic=1">
+		<a id="desc-product-new" class="list-toolbar-btn" href="{$link->getAdminLink('AdminProducts')|escape:'htmlall':'UTF-8'}&configure=roanjamusicshop&addMusic=1">
 			<span title="" data-toggle="tooltip" class="label-tooltip" data-original-title="{l s='Add new' mod='roanjamusicshop'}" data-html="true">
 				<i class="process-icon-new "></i>
 			</span>
@@ -35,19 +35,19 @@
 	<div id="musicsContent">
 		<div id="musics">
 			{foreach from=$musics item=music}
-				<div id="musics_{$music.id_music}" class="panel">
+				<div id="musics_{$music.id_music|escape:'htmlall':'UTF-8'}" class="panel">
 					<div class="row">
 						<div class="col-lg-1">
 							<span><i class="icon-arrows "></i></span>
 						</div>
 						<div class="col-md-3">
 							<audio controls>
-							  <source src="{$music_baseurl}{$music.mp3_name}" type="audio/mpeg">
+							  <source src="{$music_baseurl|escape:'htmlall':'UTF-8'}{$music.mp3_name|escape:'htmlall':'UTF-8'}" type="audio/mpeg">
 							</audio>
 						</div>
 						<div class="col-md-8">
 							<h4 class="pull-left">
-								#{$music.id_music} - {$music.mp3_title}
+								#{$music.id_music|escape:'htmlall':'UTF-8'} - {$music.mp3_title|escape:'htmlall':'UTF-8'}
 								{if $music.is_shared}
 									<div>
 										<span class="label color_field pull-left" style="background-color:#108510;color:white;margin-top:5px;">
@@ -57,15 +57,15 @@
 								{/if}
 							</h4>
 							<div class="btn-group-action pull-right">
-								{$music.status}
+								{$music.status|escape:'htmlall':'UTF-8'}
 
 								<a class="btn btn-default"
-									href="{$link->getAdminLink('AdminProducts')}&configure=roanjamusicshop&id_music={$music.id_music}">
+									href="{$link->getAdminLink('AdminProducts')|escape:'htmlall':'UTF-8'}&configure=roanjamusicshop&id_music={$music.id_music}">
 									<i class="icon-edit"></i>
 									{l s='Edit' mod='roanjamusicshop'}
 								</a>
 								<a class="btn btn-default"
-									href="{$currentIndex|escape:'html':'UTF-8'}&amp;delete=true&amp;updateproduct&amp;token={$token|escape:'html':'UTF-8'}&amp;id_product={$product->id}">
+									href="{$currentIndex|escape:'htmlall':'UTF-8'}&amp;delete=true&amp;updateproduct&amp;token={$token|escape:'htmlall':'UTF-8'}&amp;id_product={$product->id|escape:'htmlall':'UTF-8'}">
 									<i class="icon-trash"></i>
 									{l s='Delete' mod='roanjamusicshop'}
 								</a>
