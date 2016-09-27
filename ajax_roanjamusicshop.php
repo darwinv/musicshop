@@ -87,11 +87,13 @@ if(Tools::getValue('action')=='getSongs'){
     echo Tools::jsonEncode($res);
 }
 if(Tools::getValue('action')=='setCookie'){
-    if(!isset($_COOKIE['lista'])){
+    $context = Context::getContext();
+
+    if(!$context->cookie->lista){
         $i=0;
         $lista=array();
     }else{
-        $lista=unserialize($_COOKIE['lista']);
+        $lista=unserialize($context->cookie->lista);
         $i=count($lista);
     }
     $res=Tools::getValue('song');
@@ -107,9 +109,13 @@ if(Tools::getValue('action')=='setCookie'){
         $lista[$i]['linked_digital_id']=$valor["linked_digital_id"];
         $i++;
     }
-    setcookie('lista', serialize($lista), time()+3600*24*30,'/');
+
+    $context->cookie->__set('lista',serialize($lista));
+
+    //setcookie('lista', , time()+3600*24*30,'/');
 }
 if(Tools::getValue('action')=='removeSong'){
+    $context = Context::getContext();
     $id=Tools::getValue('id');
     $typeRemove=Tools::getValue('typeRemove');
 
@@ -118,18 +124,19 @@ if(Tools::getValue('action')=='removeSong'){
     }elseif($typeRemove=='song'){
         $field='linked_digital_id';
     }
-    $lista=unserialize($_COOKIE['lista']);
+    $lista=unserialize($context->cookie->lista);
 
     foreach ($lista as $key => $value) {
         if($value[$field]==$id){
             unset($lista[$key]);
         }
     }
-    if(!empty($lista)){
+    $context->cookie->__set('lista',serialize($lista));
+    /*if(!empty($lista)){
         setcookie('lista', serialize($lista), time()+3600*24*30,'/');
     }else{
         setcookie('lista', serialize($lista), time()-3600,'/');
-    }
+    }*/
 }
 if (Tools::getValue('action') == 'updateSlidesPosition' && Tools::getValue('musics'))
 {
