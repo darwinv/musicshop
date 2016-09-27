@@ -301,9 +301,8 @@ class RoanjaMusicShop extends Module
 
 	public function hookDisplayFooter()
 	{
-
-		if(isset($_COOKIE['lista'])){
-				$lista=unserialize($_COOKIE['lista']);
+		if(isset($this->context->cookie->lista)){
+				$lista=unserialize($this->context->cookie->lista);
 				$oculto="";
 		}else{
 				$lista=array();
@@ -347,8 +346,8 @@ class RoanjaMusicShop extends Module
 			{
 				$this->product = new Product($data['linked_digital_id'], false,$this->context->language->id);
 				$results[$i]["price"]=$this->product->price;
-				if(isset($_COOKIE['lista'])){
-					$lista=unserialize($_COOKIE['lista']);
+				if($this->context->cookie->lista){
+					$lista=unserialize($this->context->cookie->lista);
 					$lista=$this->array_columns($lista,"id");
 					if(in_array($data['linked_digital_id'],$lista)){
 						$clase="quitar-lista";
@@ -408,8 +407,8 @@ class RoanjaMusicShop extends Module
 		$price=$this->GetPriceFormat($this->product->price);
 
 		if(!empty($item_mp3)){
-			if(isset($_COOKIE['lista'])){
-				$lista=unserialize($_COOKIE['lista']);
+			if($this->context->cookie->lista){
+				$lista=unserialize($this->context->cookie->lista);
 				$lista=$this->array_columns($lista,"id");
 				if(in_array($id_product,$lista)){
 					$clase="quitar-lista";
@@ -460,8 +459,8 @@ class RoanjaMusicShop extends Module
 
 				if(!empty($item_mp3)){
 
-						if(isset($_COOKIE['lista'])){
-							 $lista=unserialize($_COOKIE['lista']);
+						if($this->context->cookie->lista){
+							 $lista=unserialize($this->context->cookie->lista);
 							 $lista=$this->array_columns($lista,"id");
 						 if(in_array($id_product,$lista)){
 						$clase="quitar-lista";

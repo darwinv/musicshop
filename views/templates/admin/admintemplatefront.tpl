@@ -183,7 +183,7 @@
       <div class="panel-footer">
         <a href="{$link->getAdminLink('AdminProducts')|escape:'htmlall':'UTF-8'}" class="btn btn-default"><i class="process-icon-cancel"></i> {l s='Cancel'|escape:'html' mod='roanjamusicshop'}</a>
         <input type="hidden" name="submitMusic" id="submitMusic" value="1"/>
-        <input type="hidden" name="id_product" id="productId" value="{$id_product|escape:'html'}"/>
+        <input type="hidden" name="id_product" id="productId" value="{$id_product|escape:'htmlall':'UTF-8'}"/>
         <input type="hidden" name="deleteroanjamusicshop" id="deleteroanjamusicshop" value=""/>
         <button type="submit" name="submitAddproduct" class="btn btn-default pull-right" disabled="disabled"><i class="process-icon-loading"></i> {l s='Save'}</button>
         <button type="submit" name="submitAddproductAndStay" id="submitAddproductAndStayMusic" class="btn btn-default pull-right"><i class="process-icon-save"></i> {l s='Save and stay'}</button>
@@ -191,15 +191,15 @@
    </div>
 <script type="text/javascript">
   if (tabs_manager.allow_hide_other_languages)
-    hideOtherLanguage({$default_language});
+    hideOtherLanguage({$default_language|escape:'htmlall':'UTF-8'});
 </script>
 <script type="text/javascript">
   $(document).ready(function(){
 
 
-  	$('.{$db_prefix}').find('.delete').attr('onclick','');
+  	$(".{$db_prefix|escape:'htmlall':'UTF-8'}").find('.delete').attr('onclick','');
 
-  	$('.{$db_prefix}rj_music_lang').find('.delete').on('click',function(e){
+  	$(".{$db_prefix|escape:'htmlall':'UTF-8'}rj_music_lang").find('.delete').on('click',function(e){
   		if (confirm('Delete this item?')){
   			e.preventDefault();
   			var delStr = $(this).prop('href');
