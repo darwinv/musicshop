@@ -185,8 +185,8 @@
         <input type="hidden" name="submitMusic" id="submitMusic" value="1"/>
         <input type="hidden" name="id_product" id="productId" value="{$id_product|escape:'htmlall':'UTF-8'}"/>
         <input type="hidden" name="deleteroanjamusicshop" id="deleteroanjamusicshop" value=""/>
-        <button type="submit" name="submitAddproduct" class="btn btn-default pull-right" disabled="disabled"><i class="process-icon-loading"></i> {l s='Save'}</button>
-        <button type="submit" name="submitAddproductAndStay" id="submitAddproductAndStayMusic" class="btn btn-default pull-right"><i class="process-icon-save"></i> {l s='Save and stay'}</button>
+        <button type="submit" name="submitAddproduct" class="btn btn-default pull-right" disabled="disabled"><i class="process-icon-loading"></i> {l s='Save' mod='roanjamusicshop'}</button>
+        <button type="submit" name="submitAddproductAndStay" id="submitAddproductAndStayMusic" class="btn btn-default pull-right"><i class="process-icon-save"></i> {l s='Save and stay' mod='roanjamusicshop'}</button>
       </div>
    </div>
 <script type="text/javascript">
