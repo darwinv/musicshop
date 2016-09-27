@@ -38,7 +38,7 @@
                 <select name="virtual_prod_assoc" class="fixed-width-xl" id="virtual_prod_assoc">
                   <option value="0">{l s=' -- Select your Associated Virtual Product -- ' mod='roanjamusicshop'}</option>
                   {foreach from=$virtual_products item=items}
-                      <option value="{$items.id_product}">{$items.name}</option>
+                      <option value="{$items.id_product}">{$items.name|escape:'htmlall':'UTF-8'}</option>
                   {/foreach}
                 </select>
                 <p class="help-block">
@@ -47,7 +47,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="control-label col-lg-2" for="author_{$default_language}">
+            <label class="control-label col-lg-2" for="author_{$default_language|escape:'htmlall':'UTF-8'}">
                 {l s='Author'  mod='roanjamusicshop'}
             </label>
             <div class="col-lg-9">
@@ -58,7 +58,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="control-label col-lg-2" for="mp3_title_{$default_language}">
+            <label class="control-label col-lg-2" for="mp3_title_{$default_language|escape:'htmlall':'UTF-8'}">
               {l s='Title'  mod='roanjamusicshop'}
             </label>
             <div class="col-lg-9">
@@ -69,7 +69,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="control-label col-lg-2" for="genero_{$default_language}">
+            <label class="control-label col-lg-2" for="genero_{$default_language|escape:'htmlall':'UTF-8'}">
                 {l s='Genero'  mod='roanjamusicshop'}
             </label>
             <div class="col-lg-9">
@@ -173,7 +173,7 @@
                       });
                    </script>
                    <p class="help-block">
-                   	{l s='Maximum MP3 size is :' mod='roanjamusicshop'} {$max_mp3_size}{l s='. - PLEASE NOTE THAT SOME BROWSERS DO NOT SUPPORT MP4/AAC, OGG, WAV MUSIC FORMATS' mod='roanjamusicshop'}
+                   	{l s='Maximum MP3 size is :' mod='roanjamusicshop'} {$max_mp3_size|escape:'htmlall':'UTF-8'}{l s='. - PLEASE NOTE THAT SOME BROWSERS DO NOT SUPPORT MP4/AAC, OGG, WAV MUSIC FORMATS' mod='roanjamusicshop'}
 
                    </p>
                 </div>
@@ -181,7 +181,7 @@
       </div>
       <!-- /.form-wrapper -->
       <div class="panel-footer">
-        <a href="{$link->getAdminLink('AdminProducts')}" class="btn btn-default"><i class="process-icon-cancel"></i> {l s='Cancel'|escape:'html' mod='roanjamusicshop'}</a>
+        <a href="{$link->getAdminLink('AdminProducts')|escape:'htmlall':'UTF-8'}" class="btn btn-default"><i class="process-icon-cancel"></i> {l s='Cancel'|escape:'html' mod='roanjamusicshop'}</a>
         <input type="hidden" name="submitMusic" id="submitMusic" value="1"/>
         <input type="hidden" name="id_product" id="productId" value="{$id_product|escape:'html'}"/>
         <input type="hidden" name="deleteroanjamusicshop" id="deleteroanjamusicshop" value=""/>
