@@ -61,8 +61,8 @@ class RoanjaMusicShop extends Module
 			$this->registerHook('displayRightColumnProduct') &&
 			$this->registerHook('displayProductTabContent') &&
 			$this->registerHook('actionProductSave') &&
-			$this->registerHook('displayProductListReviews')&&
-			$this->registerHook('displayProductSpecial')&&
+			$this->registerHook('displayProductListReviews') &&
+			$this->registerHook('displayProductSpecial') &&
 			$this->registerHook('displayFooter') &&
 			$this->registerHook('displayHeader')
 			)
@@ -1091,7 +1091,8 @@ $product = new Product((int)Tools::getValue('id_product'));
 			$fields['id_category_default']=$product->id_category_default;
 		}
 
-		foreach($categorias as $key => $value) {
+		foreach($categorias as $key => $value)
+		 {
 		$fields['categoryBox[]']=$categorias[$key];	# code...
 		}
 
