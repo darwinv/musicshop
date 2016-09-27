@@ -497,7 +497,7 @@ class RoanjaMusicShop extends Module
 	}
 	public function GetImageList($link_rewrite,$id_image)
 	{
-		return $this->context->link->getImageLink($link_rewrite, $id_image,'cart_default');
+		return $this->context->link->getImageLink($link_rewrite, $id_image,ImageType::getFormatedName('cart') );
 	}
 	public function getNextPosition()
 	{
