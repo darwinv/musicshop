@@ -38,7 +38,7 @@
                 <select name="virtual_prod_assoc" class="fixed-width-xl" id="virtual_prod_assoc">
                   <option value="0">{l s=' -- Select your Associated Virtual Product -- ' mod='roanjamusicshop'}</option>
                   {foreach from=$virtual_products item=items}
-                      <option value="{$items.id_product}">{$items.name|escape:'htmlall':'UTF-8'}</option>
+                      <option value="{$items.id_product|escape:'htmlall':'UTF-8'}">{$items.name|escape:'htmlall':'UTF-8'}</option>
                   {/foreach}
                 </select>
                 <p class="help-block">
@@ -81,17 +81,17 @@
           </div>
           <div class="form-group">
             <label class="control-label col-lg-2">
-              {l s='Enabled'}
+              {l s='Enabled' mod='roanjamusicshop'}
             </label>
             <div class="col-lg-9">
               <span class="switch prestashop-switch fixed-width-lg">
                 <input type="radio" name="active_music" id="active_music_on" value="1" checked="checked" />
                 <label for="active_music_on" class="radioCheck">
-                  {l s='Yes'}
+                  {l s='Yes' mod='roanjamusicshop'}
                 </label>
                 <input type="radio" name="active_music" id="active_music_off" value="0" />
                 <label for="active_music_off" class="radioCheck">
-                  {l s='No'}
+                  {l s='No' mod='roanjamusicshop'}
                 </label>
                 <a class="slide-button btn"></a>
               </span>
