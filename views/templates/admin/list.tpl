@@ -1,4 +1,4 @@
-/*
+{*
 * 2007-2016 PrestaShop
 *
 * NOTICE OF LICENSE
@@ -18,11 +18,11 @@
 * needs please refer to http://www.prestashop.com for more information.
 *
 *  @author PrestaShop SA <contact@prestashop.com>
-*  @copyright  2007-2016 PrestaShop SA
+*  @copyright  2007-2015 PrestaShop SA
 *  @version  Release: $Revision$
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
-*/
+*}
 <div class="panel"><h3><i class="icon-list-ul"></i> {l s='Music list' mod='roanjamusicshop'}
 	<span class="panel-heading-action">
 		<a id="desc-product-new" class="list-toolbar-btn" href="{$link->getAdminLink('AdminProducts')|escape:'htmlall':'UTF-8'}&configure=roanjamusicshop&addMusic=1">
@@ -60,7 +60,7 @@
 								{$music.status|escape:'htmlall':'UTF-8'}
 
 								<a class="btn btn-default"
-									href="{$link->getAdminLink('AdminProducts')|escape:'htmlall':'UTF-8'}&configure=roanjamusicshop&id_music={$music.id_music}">
+									href="{$link->getAdminLink('AdminProducts')|escape:'htmlall':'UTF-8'}&configure=roanjamusicshop&id_music={$music.id_music|escape:'htmlall':'UTF-8'}">
 									<i class="icon-edit"></i>
 									{l s='Edit' mod='roanjamusicshop'}
 								</a>

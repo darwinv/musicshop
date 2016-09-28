@@ -1,4 +1,4 @@
-/*
+{*
 * 2007-2016 PrestaShop
 *
 * NOTICE OF LICENSE
@@ -18,14 +18,15 @@
 * needs please refer to http://www.prestashop.com for more information.
 *
 *  @author PrestaShop SA <contact@prestashop.com>
-*  @copyright  2007-2016 PrestaShop SA
+*  @copyright  2007-2015 PrestaShop SA
 *  @version  Release: $Revision$
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
-*/
+*}
 
 
-<div id="barra" name="barra" class="sm2-bar-ui full-width fixed {$oculto}" data-ruta="{$modules_dir}">
+
+<div id="barra" name="barra" class="sm2-bar-ui full-width fixed {$oculto|escape:'htmlall':'UTF-8'}" data-ruta="{$modules_dir|escape:'htmlall':'UTF-8'}">
  <div class="bd sm2-main-controls">
   <div class="sm2-inline-texture"></div>
   <div class="sm2-inline-gradient"></div>
@@ -115,18 +116,18 @@
        </div>
         -->
       </div>
-     <!--<span class="label">{$valor.title|truncate:10}</span></a><button class="quitar-lista2">X</button></li>-->
+
      </li>
         {if !empty($lista)}
           {foreach $lista as $lis=>$valor}
-            <li class="allsongs-{$valor.id} song-{$valor.linked_digital_id} item-list" data-idmusic="{$valor.linked_digital_id}">
-              <a href="{$modules_dir}roanjamusicshop/mp3/{$valor.name}" class="dat-list" data-youtube="{if !empty($valor.youtube)}{$valor.youtube}{/if}">
+            <li class="allsongs-{$valor.id|escape:'htmlall':'UTF-8'} song-{$valor.linked_digital_id|escape:'htmlall':'UTF-8'} item-list" data-idmusic="{$valor.linked_digital_id|escape:'htmlall':'UTF-8'}">
+              <a href="{$modules_dir|escape:'htmlall':'UTF-8'}roanjamusicshop/mp3/{$valor.name|escape:'htmlall':'UTF-8'}" class="dat-list" data-youtube="{if !empty($valor.youtube)}{$valor.youtube|escape:'htmlall':'UTF-8'}{/if}">
                   {assign var='img' value=Product::getCover($valor.linked_digital_id)}
-                  <img  class="img-responsive img-list" itemprop="image" src="{$link->getImageLink($valor.linked_digital_id, $img.id_image, 'small_default')|escape:'html':'UTF-8'}" />
-              <p class="p-list"><span class="list-titlesound"><b>{$valor.title}</b></span>&nbsp;&nbsp;-&nbsp;&nbsp;<span>{$valor.genero}</span><br><span class="list-author">{$valor.author}</span></p>
+                  <img  class="img-responsive img-list" itemprop="image" src="{$link->getImageLink($valor.linked_digital_id, $img.id_image, 'small_default')}" />
+              <p class="p-list"><span class="list-titlesound"><b>{$valor.title|escape:'htmlall':'UTF-8'}</b></span>&nbsp;&nbsp;-&nbsp;&nbsp;<span>{$valor.genero|escape:'htmlall':'UTF-8'}</span><br><span class="list-author">{$valor.author|escape:'htmlall':'UTF-8'}</span></p>
               </a>
               <a class="quitar-lista"><span><i class="fa fa-remove"></i></span></a>
-              <a class="exclusive ajax_add_to_cart_button cart-list-ico" rel="ajax_id_product_{$valor.id}" href="{$link->getPageLink('cart')|escape:'html'}?qty=1&amp;id_product={$valor.id}&amp&amp;add" title="{l s='Add to cart' mod='roanjamusicshop'}" data-id-product="{$valor.id}">&nbsp;&nbsp;
+              <a class="exclusive ajax_add_to_cart_button cart-list-ico" rel="ajax_id_product_{$valor.id|escape:'htmlall':'UTF-8'}" href="{$link->getPageLink('cart')|escape:'htmlall':'UTF-8'}?qty=1&amp;id_product={$valor.id|escape:'htmlall':'UTF-8'}&amp&amp;add" title="{l s='Add to cart' mod='roanjamusicshop'}" data-id-product="{$valor.id|escape:'htmlall':'UTF-8'}">&nbsp;&nbsp;
               <span class="price-list">
               {convertPrice price=$valor.price}
               &nbsp;&nbsp;<i class="fa fa-shopping-cart"></i></span>
